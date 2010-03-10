@@ -35,6 +35,9 @@ rm -rf $RPM_BUILD_ROOT
 python setup.py install --root=$RPM_BUILD_ROOT 
 %find_lang %name
 
+# bug that should be fixed with newer python-distutils-extra according to upstream
+rm -f $RPM_BUILD_ROOT/%_datadir/applications/project_name.desktop
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -47,4 +50,3 @@ rm -rf $RPM_BUILD_ROOT
 %_bindir/%name
 %_mandir/man1/*
 %_sysconfdir//bash_completion.d/%name
-%_datadir/applications/project_name.desktop
