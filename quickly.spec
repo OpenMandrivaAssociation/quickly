@@ -12,6 +12,7 @@ Group:		Development/Other
 URL:		https://launchpad.net/quickly
 Source:		http://launchpad.net/quickly/0.x/%{version}/+download/%{name}-%{version}.tar.gz
 BuildRequires:  python-devel python-distutils-extra 
+BuildRequires:  intltool
 BuildArch:	noarch
 
 
