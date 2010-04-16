@@ -1,5 +1,5 @@
 %define name quickly
-%define version 0.2.5
+%define version 0.4
 %define release %mkrel 1
 
 Name:		%{name}
@@ -10,8 +10,9 @@ Release:	%{release}
 License:	GPLv3
 Group:		Development/Other
 URL:		https://launchpad.net/quickly
-Source:		http://launchpad.net/quickly/0.x/%{version}/+download/%{name}-%{version}.tar.gz
-BuildRequires:  python-devel python-distutils-extra 
+Source:		http://launchpad.net/quickly/0.x/%{version}/+download/%{name}_%{version}.orig.tar.gz
+BuildRequires:  python-devel 
+BuildRequires:  python-distutils-extra >= 2.18 
 BuildRequires:  intltool
 BuildArch:	noarch
 
@@ -28,7 +29,7 @@ corporate documents, creating your awesome LaTeX helpers
 
 %prep
 
-%setup -q -n %name
+%setup -q
 %build
 
 %install
