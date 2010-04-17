@@ -13,7 +13,7 @@ URL:		https://launchpad.net/quickly
 Source:		http://launchpad.net/quickly/0.x/%{version}/+download/%{name}_%{version}.orig.tar.gz
 BuildRequires:  python-devel 
 BuildRequires:  python-distutils-extra >= 2.18 
-BuildRequires:  intltool
+BuildRequires:  intltool gnome-doc-utils
 BuildArch:	noarch
 
 
