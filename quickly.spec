@@ -1,12 +1,12 @@
 Name:		quickly
 Summary:	Command line tools to ease the creation of a new project
-Version:	0.4
-Release:	2
+Version:	11.09
+Release:	1
 
 License:	GPLv3
 Group:		Development/Other
 URL:		https://launchpad.net/quickly
-Source0:	http://launchpad.net/quickly/0.x/%{version}/+download/%{name}_%{version}.orig.tar.gz
+Source0:	http://launchpad.net/quickly/0.x/%{version}/+download/%{name}-%{version}.tar.gz
 BuildRequires:	python-devel 
 BuildRequires:	python-distutils-extra >= 2.18 
 BuildRequires:	intltool gnome-doc-utils
@@ -32,13 +32,11 @@ corporate documents, creating your awesome LaTeX helpers
 python setup.py install --root=%{buildroot}
 %find_lang %{name}
 
-# bug that should be fixed with newer python-distutils-extra according to upstream
-rm -f %{buildroot}%{_datadir}/applications/project_name.desktop
-
 %files -f %{name}.lang
 %doc NEWS README 
 %{_datadir}/%{name}
 %{python_sitelib}/%{name}
+%{python_sitelib}/*.py
 %{python_sitelib}/*egg-info
 %{_bindir}/%{name}
 %{_mandir}/man1/*
