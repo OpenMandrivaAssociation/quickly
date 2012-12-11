@@ -1,15 +1,15 @@
 Name:		quickly
 Summary:	Command line tools to ease the creation of a new project
-Version:	11.09
+Version:	12.08.1
 Release:	1
-
 License:	GPLv3
 Group:		Development/Other
 URL:		https://launchpad.net/quickly
 Source0:	http://launchpad.net/quickly/0.x/%{version}/+download/%{name}-%{version}.tar.gz
-BuildRequires:	python-devel 
-BuildRequires:	python-distutils-extra >= 2.18 
-BuildRequires:	intltool gnome-doc-utils
+BuildRequires:	python-devel
+BuildRequires:	python-distutils-extra >= 2.18
+BuildRequires:	intltool
+BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildArch:	noarch
 
 
@@ -21,7 +21,7 @@ to use. Quickly's templates are easy to write. So if you are a fan of
 language foo, you can create a foo-project template. Or if you want to 
 help people making plugins for your killer app, you can make a 
 killer-app-plugin template. You can even create a template for managing 
-corporate documents, creating your awesome LaTeX helpers
+corporate documents, creating your awesome LaTeX helpers.
 
 %prep
 %setup -q
@@ -33,8 +33,9 @@ python setup.py install --root=%{buildroot}
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc NEWS README 
+%doc NEWS README
 %{_datadir}/%{name}
+%{_datadir}/glib-2.0/schemas/*.xml
 %{python_sitelib}/%{name}
 %{python_sitelib}/*.py
 %{python_sitelib}/*egg-info
