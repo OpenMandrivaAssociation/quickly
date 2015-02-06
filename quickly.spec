@@ -1,7 +1,7 @@
 Name:		quickly
 Summary:	Command line tools to ease the creation of a new project
 Version:	12.08.1
-Release:	1
+Release:	2
 License:	GPLv3
 Group:		Development/Other
 URL:		https://launchpad.net/quickly
